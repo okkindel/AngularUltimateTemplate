@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { IconComponent } from './icon';
+import { ButtonImports } from './button';
+import { IconImports } from './icon';
 
-const ATOMS = [IconComponent];
+const ATOMS = [IconImports, ButtonImports];
 
 @NgModule({ imports: ATOMS, exports: ATOMS })
 export class AtomsModule {}

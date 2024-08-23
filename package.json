@@ -36,6 +36,7 @@
     "@angular/compiler-cli": "^18.1.0",
     "angular-eslint": "^18.3.0",
     "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-perfectionist": "^3.2.0",
