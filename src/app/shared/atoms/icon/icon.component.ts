@@ -30,9 +30,13 @@ export type Icon = keyof typeof icons;
 })
 export class IconComponent {
   public readonly name = input<Icon>();
+
   public readonly nameUntyped = input<string>();
+
   public readonly size = input<string | number>(15);
+
   public readonly strokeWidth = input<string | number>(3);
+
   public readonly classes = input<ClassValue | ClassArray>([], {
     alias: 'class',
   });

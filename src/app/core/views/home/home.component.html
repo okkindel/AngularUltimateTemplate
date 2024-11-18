@@ -1,4 +1,42 @@
-<button appButton mode="link" severity="danger" outline >
-    Sample
-  <app-icon name="AirVent" />
-</button>
+<h2>Mode</h2>
+
+<div class="grid grid-cols-6 gap-4 p-4">
+  <button appButton>Sample</button>
+  <button appButton mode="secondary">Sample</button>
+  <button appButton mode="accent">Sample</button>
+  <button appButton mode="ghost">Sample</button>
+  <button appButton mode="link">Sample</button>
+</div>
+
+<h2>Severity</h2>
+
+<div class="grid grid-cols-6 gap-4 p-4">
+  <button appButton severity="neutral">Sample</button>
+  <button appButton severity="danger">Sample</button>
+  <button appButton severity="info">Sample</button>
+  <button appButton severity="success">Sample</button>
+  <button appButton severity="warning">Sample</button>
+</div>
+
+<h2>Input</h2>
+
+<div class="grid grid-cols-6 gap-4 p-4">
+  <input appInput placeholder="Sample" />
+  <input appInput placeholder="Sample" mode="primary" />
+  <input appInput placeholder="Sample" mode="secondary" />
+  <input appInput placeholder="Sample" type="date" severity="warning" />
+  <input appInput placeholder="Sample" type="color" severity="danger" />
+
+  <label appInput>
+    <app-icon name="AlarmClock" class="text-gray-500" />
+    <input />
+  </label>
+
+  <div appLabelWrapper>
+    <label for="sample" appInputLabel>Sample</label>
+    <label appInput>
+      <app-icon name="AlarmClock" class="text-gray-500" />
+      <input id="sample" />
+    </label>
+  </div>
+</div>

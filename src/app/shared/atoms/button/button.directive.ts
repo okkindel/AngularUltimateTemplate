@@ -1,4 +1,4 @@
-import { booleanAttribute, HostBinding, Directive, input } from '@angular/core';
+import { booleanAttribute, Directive, computed, input } from '@angular/core';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ClassArray, ClassValue } from 'clsx';
 import { combine } from '@shared/utils';
@@ -7,13 +7,14 @@ const buttonVariants = cva(`daisy-btn`, {
   variants: {
     mode: {
       primary: `daisy-btn-primary`,
-      neutral: `daisy-btn-neutral`,
       secondary: `daisy-btn-secondary`,
       accent: `daisy-btn-accent`,
       ghost: `daisy-btn-ghost`,
       link: `daisy-btn-link`,
     },
     severity: {
+      none: ``,
+      neutral: `daisy-btn-neutral`,
       success: `daisy-btn-success`,
       warning: `daisy-btn-warning`,
       danger: `daisy-btn-error`,
@@ -21,7 +22,7 @@ const buttonVariants = cva(`daisy-btn`, {
     },
     size: {
       large: `daisy-btn-lg`,
-      base: ``,
+      base: `daisy-btn-md`,
       small: `daisy-btn-sm`,
       tiny: `daisy-btn-xs`,
     },
@@ -43,6 +44,7 @@ const buttonVariants = cva(`daisy-btn`, {
   },
   defaultVariants: {
     mode: 'primary',
+    severity: 'none',
     size: 'base',
     outline: false,
     disabled: false,
@@ -54,7 +56,11 @@ const buttonVariants = cva(`daisy-btn`, {
 
 export type ButtonVariant = VariantProps<typeof buttonVariants>;
 
-@Directive({ selector: 'button[appButton], a[appButton]', standalone: true })
+@Directive({
+  selector: 'button[appButton], a[appButton]',
+  host: { '[class]': '_generated()' },
+  standalone: true,
+})
 export class ButtonDirective {
   public readonly mode = input<ButtonVariant['mode']>();
 
@@ -86,8 +92,8 @@ export class ButtonDirective {
     alias: 'class',
   });
 
-  @HostBinding('class') public get classNames(): string {
-    return combine(
+  protected readonly _generated = computed(() =>
+    combine(
       buttonVariants({
         mode: this.mode(),
         severity: this.severity(),
@@ -99,6 +105,6 @@ export class ButtonDirective {
         glass: this.glass(),
       }),
       this.classes(),
-    );
-  }
+    ),
+  );
 }

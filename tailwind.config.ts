@@ -17,19 +17,23 @@ module.exports = {
     themes: [
       {
         default: {
-          primary: '#047857',
-          secondary: '#34d399',
-          accent: '#f472b6',
+          primary: '#344e41',
+          secondary: '#a3b18a',
+          accent: '#dad7cd',
 
-          neutral: '#9ca3af',
-          success: '#22c55e',
-          warning: '#facc15',
-          error: '#f87171',
-          info: '#22d3ee',
+          neutral: '#dee2ff',
+          success: '#81b29a',
+          warning: '#f2cc8f',
+          error: '#e07a5f',
+          info: '#a9def9',
+
+          '--rounded-badge': '.125rem',
+          '--rounded-box': '0.25rem',
+          '--rounded-btn': '.125rem',
+          '--tab-radius': '0.25rem',
+          '--btn-focus-scale': '1',
 
           'base-100': '#fcfcfc',
-          'base-200': '#f9fafb',
-          'base-300': '#f4f5f7',
         },
       },
     ],
