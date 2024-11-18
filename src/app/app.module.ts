@@ -4,10 +4,11 @@ import { SharedModule } from '@shared/shared.module';
 import { ApiModule } from '@api/api.module';
 import { NgModule } from '@angular/core';
 
+import { TranslocoRootModule } from './shared/atoms/global/i18n/transloco-root.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-const GLOBAL_MODULES = [LucideAngularModule.pick(icons)];
+const GLOBAL_MODULES = [LucideAngularModule.pick(icons), TranslocoRootModule];
 
 @NgModule({
   declarations: [AppComponent],
